@@ -110,6 +110,12 @@ fragmentListener.addToList(record);
         handleTipChange(-TIP_STEP_CHANGE);
     }
 
+    @OnClick(R.id.btnClear)
+    public void handleClickClear()
+    {
+        fragmentListener.clearList();
+        
+    }
 
     public int getTipPercentage() {
         int tipPercentage = DEFAULT_TIP_PERCENTAGE;
