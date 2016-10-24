@@ -114,7 +114,7 @@ fragmentListener.addToList(record);
     public void handleClickClear()
     {
         fragmentListener.clearList();
-        
+
     }
 
     public int getTipPercentage() {
