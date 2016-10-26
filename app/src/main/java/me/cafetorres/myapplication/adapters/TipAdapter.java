@@ -81,7 +81,7 @@ public class TipAdapter extends RecyclerView.Adapter<TipAdapter.ViewHolder>{
         public void setOnItemClickListener(final TipRecord element, final OnItemClickListener onItemClickListener){
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
-                public void onClick(View view) {
+                public void onClick(View v) {
                     onItemClickListener.onItemClick(element);
                 }
             });

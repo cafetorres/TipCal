@@ -1,11 +1,11 @@
 package me.cafetorres.myapplication.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import me.cafetorres.myapplication.R;
+import me.cafetorres.myapplication.activities.activity_detail;
 import me.cafetorres.myapplication.adapters.OnItemClickListener;
 import me.cafetorres.myapplication.adapters.TipAdapter;
 import me.cafetorres.myapplication.models.TipRecord;
@@ -65,7 +66,11 @@ public class TipHistoryListFragment extends Fragment implements TipHistoryListFr
 
     @Override
     public void onItemClick(TipRecord tipRecord) {
-        //TODO Implementar la logica para llamar una actividad enviandolela informacion de la propina
-        Log.v("Mensaje!",tipRecord.getDateFormated());
+        Intent intent = new Intent(getActivity(),activity_detail.class);
+        intent.putExtra("Total",tipRecord.getBillFormated());
+        intent.putExtra("Propina",tipRecord.getTipFormated());
+        intent.putExtra("Fecha", tipRecord.getDateFormated());
+        startActivity(intent);
+
     }
 }
