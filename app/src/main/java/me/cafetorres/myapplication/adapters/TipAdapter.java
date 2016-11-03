@@ -13,7 +13,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import me.cafetorres.myapplication.R;
-import me.cafetorres.myapplication.models.TipRecord;
+import me.cafetorres.myapplication.entity.TipRecord;
 
 /**
  * Created by Carlos on 13/10/2016.

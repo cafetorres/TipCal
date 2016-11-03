@@ -16,7 +16,7 @@ import me.cafetorres.myapplication.R;
 import me.cafetorres.myapplication.activities.activity_detail;
 import me.cafetorres.myapplication.adapters.OnItemClickListener;
 import me.cafetorres.myapplication.adapters.TipAdapter;
-import me.cafetorres.myapplication.models.TipRecord;
+import me.cafetorres.myapplication.entity.TipRecord;
 
 /**
  * Created by Carlos on 12/10/2016.

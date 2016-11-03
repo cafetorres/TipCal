@@ -1,6 +1,6 @@
 package me.cafetorres.myapplication.adapters;
 
-import me.cafetorres.myapplication.models.TipRecord;
+import me.cafetorres.myapplication.entity.TipRecord;
 
 /**
  * Created by Carlos on 24/10/2016.

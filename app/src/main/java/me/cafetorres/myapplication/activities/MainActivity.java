@@ -23,7 +23,7 @@ import me.cafetorres.myapplication.R;
 import me.cafetorres.myapplication.TipCalcApp;
 import me.cafetorres.myapplication.fragments.TipHistoryListFragment;
 import me.cafetorres.myapplication.fragments.TipHistoryListFragmentListener;
-import me.cafetorres.myapplication.models.TipRecord;
+import me.cafetorres.myapplication.entity.TipRecord;
 
 public class MainActivity extends AppCompatActivity {
 
