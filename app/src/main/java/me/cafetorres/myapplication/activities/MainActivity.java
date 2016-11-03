@@ -24,6 +24,7 @@ import me.cafetorres.myapplication.TipCalcApp;
 import me.cafetorres.myapplication.fragments.TipHistoryListFragment;
 import me.cafetorres.myapplication.fragments.TipHistoryListFragmentListener;
 import me.cafetorres.myapplication.entity.TipRecord;
+import me.cafetorres.myapplication.utils.TipUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             record.setTipPercentage(tipPercentage);
             record.setTimestamp(new Date());
 
-            String strTip = String.format(getString(R.string.global_message_tip), record.getTip());
+            String strTip = String.format(getString(R.string.global_message_tip), TipUtils.getTip(record));
 
 fragmentListener.addToList(record);
 

@@ -17,6 +17,7 @@ import me.cafetorres.myapplication.activities.activity_detail;
 import me.cafetorres.myapplication.adapters.OnItemClickListener;
 import me.cafetorres.myapplication.adapters.TipAdapter;
 import me.cafetorres.myapplication.entity.TipRecord;
+import me.cafetorres.myapplication.utils.TipUtils;
 
 /**
  * Created by Carlos on 12/10/2016.
@@ -67,9 +68,9 @@ public class TipHistoryListFragment extends Fragment implements TipHistoryListFr
     @Override
     public void onItemClick(TipRecord tipRecord) {
         Intent intent = new Intent(getActivity(),activity_detail.class);
-        intent.putExtra("Total",tipRecord.getBillFormated());
-        intent.putExtra("Propina",tipRecord.getTipFormated());
-        intent.putExtra("Fecha", tipRecord.getDateFormated());
+        intent.putExtra("Total", TipUtils.getTip(tipRecord) );
+        intent.putExtra("Propina",TipUtils.getTip(tipRecord));
+        intent.putExtra("Fecha", TipUtils.getTip(tipRecord));
         startActivity(intent);
 
     }
