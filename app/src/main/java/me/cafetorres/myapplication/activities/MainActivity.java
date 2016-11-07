@@ -14,6 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.raizlabs.android.dbflow.config.FlowConfig;
+import com.raizlabs.android.dbflow.config.FlowManager;
+
 import java.util.Date;
 
 import butterknife.Bind;
@@ -21,6 +24,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.cafetorres.myapplication.R;
 import me.cafetorres.myapplication.TipCalcApp;
+import me.cafetorres.myapplication.db.TipsDatabase;
 import me.cafetorres.myapplication.fragments.TipHistoryListFragment;
 import me.cafetorres.myapplication.fragments.TipHistoryListFragmentListener;
 import me.cafetorres.myapplication.entity.TipRecord;
@@ -53,10 +57,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        initDB();
+
+
         TipHistoryListFragment fragment = (TipHistoryListFragment)getSupportFragmentManager().findFragmentById(R.id.fragmentList);
 
         fragment.setRetainInstance(true);
         fragmentListener = (TipHistoryListFragmentListener) fragment;
+    }
+
+    private void initDB() {
+        FlowManager.init(new FlowConfig.Builder(this).build());
+        FlowManager.getDatabase(TipsDatabase.class).getWritableDatabase();
     }
 
     @Override
