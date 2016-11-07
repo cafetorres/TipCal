@@ -58,6 +58,7 @@ public class TipHistoryListFragment extends Fragment implements TipHistoryListFr
     @Override
     public void addToList(TipRecord record) {
         adapter.add(record);
+
     }
 
     @Override

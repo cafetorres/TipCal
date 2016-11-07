@@ -3,8 +3,8 @@ package me.cafetorres.myapplication.entity;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
+import com.raizlabs.android.dbflow.structure.BaseModel;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import me.cafetorres.myapplication.db.TipsDatabase;
@@ -13,7 +13,7 @@ import me.cafetorres.myapplication.db.TipsDatabase;
  * Created by Carlos on 13/10/2016.
  */
 @Table(database = TipsDatabase.class)
-public class TipRecord{
+public class TipRecord extends BaseModel{
     @PrimaryKey(autoincrement = true)
     private int id;
     @Column
