@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.raizlabs.android.dbflow.sql.language.Delete;
 import com.raizlabs.android.dbflow.sql.language.Select;
 
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ import butterknife.ButterKnife;
 import me.cafetorres.myapplication.R;
 import me.cafetorres.myapplication.entity.TipRecord;
 import me.cafetorres.myapplication.utils.TipUtils;
+
+import static me.cafetorres.myapplication.entity.TipRecord_Table.timestamp;
 
 /**
  * Created by Carlos on 13/10/2016.
@@ -70,11 +73,12 @@ public class TipAdapter extends RecyclerView.Adapter<TipAdapter.ViewHolder>{
 
     public void clear() {
         dataset.clear();
+        Delete.table(TipRecord.class);
         notifyDataSetChanged();
     }
 
     public void init() {
-        dataset=new Select().from(TipRecord.class).queryList();
+        dataset=new Select().from(TipRecord.class).orderBy(timestamp,true).queryList();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
