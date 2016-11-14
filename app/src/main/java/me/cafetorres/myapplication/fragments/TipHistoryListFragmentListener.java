@@ -9,4 +9,6 @@ import me.cafetorres.myapplication.entity.TipRecord;
 public interface TipHistoryListFragmentListener {
     void addToList(TipRecord record);
     void clearList();
+
+    void initList();
 }

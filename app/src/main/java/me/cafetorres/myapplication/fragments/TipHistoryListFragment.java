@@ -55,6 +55,8 @@ public class TipHistoryListFragment extends Fragment implements TipHistoryListFr
         recyclerView.setAdapter(adapter);
     }
 
+
+
     @Override
     public void addToList(TipRecord record) {
         adapter.add(record);
@@ -64,6 +66,11 @@ public class TipHistoryListFragment extends Fragment implements TipHistoryListFr
     @Override
     public void clearList() {
         adapter.clear();
+    }
+
+    @Override
+    public void initList() {
+        adapter.init();
     }
 
     @Override

@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.raizlabs.android.dbflow.sql.language.Select;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,12 +64,17 @@ public class TipAdapter extends RecyclerView.Adapter<TipAdapter.ViewHolder>{
     public void  add(TipRecord record){
         //dataset.add(0,record);
         record.save();
+        dataset=new Select().from(TipRecord.class).queryList();
         notifyDataSetChanged();
     }
 
     public void clear() {
         dataset.clear();
         notifyDataSetChanged();
+    }
+
+    public void init() {
+        dataset=new Select().from(TipRecord.class).queryList();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
